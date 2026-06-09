@@ -105,7 +105,7 @@ export LDFLAGS="-Wl,-O1,--sort-common,--as-needed"
 
 export CROSSCFLAGS_X32="${CFLAGS_X32}"
 export CROSSCFLAGS_X64="${CFLAGS_X64}"
-export CROSSLDFLAGS="${LDFLAGS}"
+export CROSSLDFLAGS="${LDFLAGS} -Wl,-section-alignment=16384"
 
 if [ "$USE_CCACHE" = "true" ]; then
 	export CC="ccache ${CC}"
